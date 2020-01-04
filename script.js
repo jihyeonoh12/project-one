@@ -38,7 +38,15 @@ $('.form-inline').on('submit', function(event){
 
 })
 
+
 $('.categoryItem').on('click', function(){
     var categoryItem = $(this).html();
     searchRecipes(categoryItem)
 })
+
+// function change(){
+//     $('.jumbotron').css('background-image', 'url(images/2.jpeg)')
+// }
+
+// change()
+
