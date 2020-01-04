@@ -1,25 +1,42 @@
-const $dropdown = $(".dropdown");
-const $dropdownToggle = $(".dropdown-toggle");
-const $dropdownMenu = $(".dropdown-menu");
-const showClass = "show";
- 
-$(window).on("load resize", function() {
-  if (this.matchMedia("(min-width: 768px)").matches) {
-    $dropdown.hover(
-      function() {
-        const $this = $(this);
-        $this.addClass(showClass);
-        $this.find($dropdownToggle).attr("aria-expanded", "true");
-        $this.find($dropdownMenu).addClass(showClass);
-      },
-      function() {
-        const $this = $(this);
-        $this.removeClass(showClass);
-        $this.find($dropdownToggle).attr("aria-expanded", "false");
-        $this.find($dropdownMenu).removeClass(showClass);
-      }
-    );
-  } else {
-    $dropdown.off("mouseenter mouseleave");
-  }
-});
+
+
+
+function searchRecipes(searchItem){
+    var foodItem = encodeURI(searchItem);
+    var recipesURL = 'https://api.spoonacular.com/recipes/search?query=' + foodItem + '&instructionsRequired=true&apiKey=aefe372afd5741e38ead99f0c5a57515'
+    $.ajax({
+        url: recipesURL,
+        method: 'GET'
+    }).then(function(response){
+        console.log(response)
+        var resultArray = response.results;
+        console.log(resultArray)
+        for (i=0; i<resultArray; i++){
+            var newItem = $('<li>');
+            newItem.addClass('resultItem')
+            var newItemTitle = $('<h2>');
+            newItemTitle.addClass('resultItemTitle')
+            newItemTitle.text(resultArray[i].title)
+            var newItemImage = $('<img>');
+            newItemImage.addClass('resultItemImg');
+            newItemImage.attr('src', 'https://spoonacular.com/recipeImages/' + resultArray[i].id +'-312x150.jpg')
+            var newItemDescription = $('<p>')
+            newItemDescription.addClass('resultItemDescription')
+            newItemDescription.html('Ready in: ' + resultArray[i].readyInMinutes + '<br><br> Serves: ' + resultArray[i].servings)
+            newItem.append(newItemTitle, newItemImage, newItemDescription);
+            newItem.appendTo($('.displayList'))
+        }
+    })
+}
+
+
+searchRecipes('burgers')
+
+
+
+$('.searchBtn').on('click', function*(){
+    $('.jumbotron').remove();
+    var searchInput = $('.inputField').val();
+    searchRecipes();
+
+})
