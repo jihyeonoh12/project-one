@@ -1,7 +1,8 @@
-
-
-
+// function to search for and display 
 function searchRecipes(searchItem){
+    $('.displayList').empty();
+    $('.displayList').removeClass('hide')
+    $('.jumbotron').remove();
     var foodItem = encodeURI(searchItem);
     var recipesURL = 'https://api.spoonacular.com/recipes/search?query=' + foodItem + '&instructionsRequired=true&apiKey=aefe372afd5741e38ead99f0c5a57515'
     $.ajax({
@@ -29,16 +30,18 @@ function searchRecipes(searchItem){
     })
 }
 
-
-
-
+// on form submission
 $('.form-inline').on('submit', function(event){
     event.preventDefault();
-    $('.displayList').removeClass('hide')
-    $('.jumbotron').remove();
     var searchInput = $('.form-control').val();
     searchRecipes(searchInput);
 
+})
+
+
+$('.categoryItem').on('click', function(){
+    var categoryItem = $(this).html();
+    searchRecipes(categoryItem)
 })
 
 // function change(){
@@ -46,3 +49,4 @@ $('.form-inline').on('submit', function(event){
 // }
 
 // change()
+
