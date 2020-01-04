@@ -25,14 +25,15 @@
 
 .dropdown:hover .dropdown-content {
     display: block;
+
 }
-
-
 .jumbotron {
     height: 100vh;
     text-align: center;
 }
+
 .footer1 {
     text-align: center;
     margin: 0px auto;
+
 }
