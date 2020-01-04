@@ -40,3 +40,9 @@ $('.form-inline').on('submit', function(event){
     searchRecipes(searchInput);
 
 })
+
+// function change(){
+//     $('.jumbotron').css('background-image', 'url(images/2.jpeg)')
+// }
+
+// change()
