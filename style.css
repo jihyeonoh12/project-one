@@ -1,6 +1,17 @@
+body {
+    color: #FF6F61 !important;
+}
+
+button {
+    color: #FF6F61 !important;
+}
+a {
+    color: #FF6F61 !important;
+}
 .dropdown {
     position: relative;
     display: inline-block;
+    color: #FF6F61;
 }
 
 .dropdown-content {
@@ -30,6 +41,7 @@
 .jumbotron {
     height: 100vh;
     text-align: center;
+    color: white;
     margin-top: 50px;
     background-image: url("images/1.jpg");
     background-repeat: none;
@@ -37,9 +49,10 @@
     background-size: cover;
 }
 
-.footer1 {
+footer{
     text-align: center;
-    margin: 0px auto;
+    background-color: #134d80;
+}
 
 }.hide{
     display: none
