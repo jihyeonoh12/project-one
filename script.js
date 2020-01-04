@@ -11,8 +11,7 @@ function searchRecipes(searchItem){
         console.log(response)
         var resultArray = response.results;
         console.log(resultArray)
-        $('.displayList').empty()
-        for (i=0; i<resultArray; i++){
+        for (i=0; i<resultArray.length; i++){
             var newItem = $('<li>');
             newItem.addClass('resultItem')
             var newItemTitle = $('<h2>');
@@ -31,12 +30,11 @@ function searchRecipes(searchItem){
 }
 
 
-searchRecipes('burgers')
-
 
 
 $('.form-inline').on('submit', function(event){
-    event.preventDefault()
+    event.preventDefault();
+    $('.displayList').removeClass('hide')
     $('.jumbotron').remove();
     var searchInput = $('.form-control').val();
     searchRecipes(searchInput);
