@@ -1,11 +1,38 @@
+
+
+
 body {
     color: #FF6F61 !important;
+
 }
 
-button {
+h1 h2 h3 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+}
+
+h4 p {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 300;
+}
+
+
+
+button  {
     background-color: #FF6F61 !important;
     border: none;
 }
+
+.btn {
+    background-color: #FF6F61 !important;
+    border: none;
+    color: white;
+
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 1em;
+}
+
 .btn-secondary{
     border: none;
 }
@@ -15,22 +42,27 @@ button {
     border: none;
 }
 
-a {
-    color: #FF6F61 !important;
-}
+
 
 nav {
+    position: relative;
     background-color: white;
     box-shadow: 0 5px 10px -1px rgba(0,0,1,.1);
 }
 
 .nav-logo {
-    margin: auto;
+   
+  margin-left: 42%;
+   
+}
+.navbar-toggler {
+    
 }
 
 .dropdown {
-    position: relative;
-    display: inline-block;
+    position: fixed;
+    left: 10px;
+    top : 15px;
     color: #FF6F61;
 }
 
@@ -69,9 +101,22 @@ nav {
     background-size: cover;
 }
 
+.display-4 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    font-size: 3em;
+}
+
+.categoryTag {
+    font-size: 1em;
+}
+
 footer{
     text-align: center;
     background-color: white;
+    color: rgb(109, 109, 109);
+    font-size: 12px;
+    padding-top: 10px;
 }
 
 .hide{
