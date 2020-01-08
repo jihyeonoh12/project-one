@@ -7,6 +7,7 @@ function searchRecipes(searchItem) {
     $('.displayList').empty();
     $('.displayList').removeClass('hide')
     $('.jumbotron-fluid').remove();
+    $('.recipeInformation').addClass('hide')
     var foodItem = encodeURI(searchItem);
     var recipesURL = 'https://api.spoonacular.com/recipes/search?query=' + foodItem + '&instructionsRequired=true&apiKey=aefe372afd5741e38ead99f0c5a57515'
     $.ajax({
@@ -20,19 +21,43 @@ function searchRecipes(searchItem) {
 
             var newItem = $('<li>');
             newItem.addClass('resultItem')
-            var newItemTitle = $('<h2>');
-            newItemTitle.addClass('resultItemTitle');
-            newItemTitle.attr('data-id', resultArray[i].id)
-            newItemTitle.text(resultArray[i].title)
-            var newItemImage = $('<img>');
-            newItemImage.addClass('resultItemImg');
-            newItemImage.attr('src', 'https://spoonacular.com/recipeImages/' + resultArray[i].id + '-312x150.jpg')
-            var newItemDescription = $('<p>')
-            newItemDescription.addClass('resultItemDescription')
-            newItemDescription.html('Ready in: ' + resultArray[i].readyInMinutes + '<br><br> Serves: ' + resultArray[i].servings);
+
+            var newCard = $('<div>').addClass('card mb-3');
+            var newRow = $('<div>').addClass('row no-gutters');
+            var imgCol = $('<div>').addClass('col-sm-4');
+            var newImg = $('<img>').addClass('card-img');
+            var contentCol = $('<div>').addClass('col-sm-8');
+            var cardBody = $('<div>').addClass('card-body');
+            var cardTitle = $('<h5>').addClass('card-title');
+            var cardText = $('<p>').addClass('card-text');
+
             var newItemBtn = $('<button>');
-            newItemBtn.addClass('btn btn-primary recipeBtn').html('Get Recipe').attr('data-id', resultArray[i].id)
-            newItem.append(newItemTitle, newItemImage, newItemDescription, newItemBtn);
+            newItemBtn.addClass('btn btn-primary recipeBtn').html('Get Recipe').attr('data-id', resultArray[i].id);
+
+            newImg.attr('src', 'https://spoonacular.com/recipeImages/' + resultArray[i].id + '-312x150.jpg');
+            cardTitle.html(resultArray[i].title);
+            cardText.html('Ready in: ' + resultArray[i].readyInMinutes + '<br><br> Serves: ' + resultArray[i].servings)
+
+            newCard.append(newRow, newItemBtn);
+            newRow.append(imgCol, contentCol);
+            imgCol.append(newImg);
+            contentCol.append(cardBody);
+            cardBody.append(cardTitle, cardText);
+            newItem.append(newCard)
+            
+            // var newItemTitle = $('<h2>');
+            // newItemTitle.addClass('resultItemTitle');
+            // newItemTitle.attr('data-id', resultArray[i].id)
+            // newItemTitle.text(resultArray[i].title)
+            // var newItemImage = $('<img>');
+            // newItemImage.addClass('resultItemImg');
+            // newItemImage.attr('src', 'https://spoonacular.com/recipeImages/' + resultArray[i].id + '-312x150.jpg')
+            // var newItemDescription = $('<p>')
+            // newItemDescription.addClass('resultItemDescription')
+            // newItemDescription.html('Ready in: ' + resultArray[i].readyInMinutes + '<br><br> Serves: ' + resultArray[i].servings);
+            // var newItemBtn = $('<button>');
+            // newItemBtn.addClass('btn btn-primary recipeBtn').html('Get Recipe').attr('data-id', resultArray[i].id)
+            // newItem.append(newItemTitle, newItemImage, newItemDescription, newItemBtn);
             newItem.appendTo($('.displayList'))
         }
         $('.recipeBtn').on('click', function () {
@@ -45,7 +70,9 @@ function searchRecipes(searchItem) {
 
 function loadRecipe(id) {
     $('.displayList').addClass('hide');
-    $('.recipeInformation').removeClass('hide')
+    $('.recipeInformation').removeClass('hide');
+    $('.ingredientList').empty();
+    $('.recipeInstructions').empty()
     var recipeInfoURL = 'https://api.spoonacular.com/recipes/' + id + '/information?apiKey=aefe372afd5741e38ead99f0c5a57515'
 
     $.ajax({
@@ -62,7 +89,13 @@ function loadRecipe(id) {
         for (i = 0; i < recipeResponse.analyzedInstructions[0].steps.length; i++) {
             $('<li>').addClass('recipeInstructionSteps').html(recipeResponse.analyzedInstructions[0].steps[i].step).appendTo($('.recipeInstructions'))
         }
-    })
+
+        whisk.queue.push(function() {
+            whisk.listeners.addClickListener('whisk-basket', 'shoppingList.addRecipeToBasket', {
+              recipeUrl: recipeResponse.sourceUrl,
+            });
+          });
+        });
 }
 
 // on form submission
@@ -86,7 +119,7 @@ $('.categoryItem').on('click', function () {
 
 // change()
 var dayImage = {
-    Monday:'images/meatless_monday2.jpg',
+    Monday: 'images/meatless_monday2.jpg',
     Tuesday: 'images/taco_tuesday.jpg',
     Wednesday: 'images/wing_wednesday.jpg',
     Thursday: 'images/cocktail_thursday3.jpg',
@@ -95,30 +128,39 @@ var dayImage = {
     Sunday: 'images/simple_sunday2.jpg'
 }
 
-function imageChange(){
-    if((moment().format('dddd'))==="Monday"){
-        $(".jumbotron").css("background-image", "url(" + dayImage.Monday)
+function imageChange() {
+    if ((moment().format('dddd')) === "Monday") {
+        $(".jumbotron-fluid").css("background-image", "url(" + dayImage.Monday);
+        $('.learnMore').attr('data-value', 'vegetarian')
     }
-    else if((moment().format('dddd'))==="Tuesday"){
-        $(".jumbotron").css("background-image", "url(" + dayImage.Tuesday)
+    else if ((moment().format('dddd')) === "Tuesday") {
+        $(".jumbotron-fluid").css("background-image", "url(" + dayImage.Tuesday);
+        $('.learnMore').attr('data-value', 'tacos')
     }
-    else if((moment().format('dddd'))==="Wednesday"){
-        $(".jumbotron").css("background-image", "url(" + dayImage.Wednesday)
+    else if ((moment().format('dddd')) === "Wednesday") {
+        $(".jumbotron-fluid").css("background-image", "url(" + dayImage.Wednesday);
+        $('.learnMore').attr('data-value', 'wings')
     }
-    else if((moment().format('dddd'))==="Thursday"){
-        $(".jumbotron").css("background-image", "url(" + dayImage.Thursday)
+    else if ((moment().format('dddd')) === "Thursday") {
+        $(".jumbotron-fluid").css("background-image", "url(" + dayImage.Thursday);
+        $('.learnMore').attr('data-value', 'cocktails')
     }
-    else if((moment().format('dddd'))==="Friday"){
-        $(".jumbotron").css("background-image", "url(" + dayImage.Friday)
+    else if ((moment().format('dddd')) === "Friday") {
+        $(".jumbotron.fluid").css("background-image", "url(" + dayImage.Friday);
+        $('.learnMore').attr('data-value', 'fried')
     }
-    else if((moment().format('dddd'))==="Saturday"){
-        $(".jumbotron").css("background-image", "url(" + dayImage.Saturday)
+    else if ((moment().format('dddd')) === "Saturday") {
+        $(".jumbotron.fluid").css("background-image", "url(" + dayImage.Saturday);
+        $('.learnMore').attr('data-value', 'salad')
     }
-    else if((moment().format('dddd'))==="Sunday"){
-        $(".jumbotron").css("background-image", "url(" + dayImage.Sunday)
+    else if ((moment().format('dddd')) === "Sunday") {
+        $(".jumbotron.fluid").css("background-image", "url(" + dayImage.Sunday);
+        $('.learnMore').attr('data-value', 'simple')
     }
-
 }
-
-
 imageChange();
+
+$('.learnMore').on('click', function(){
+    console.log($(this).attr('data-value'))
+    searchRecipes($(this).attr('data-value'))
+})

@@ -1,9 +1,7 @@
-
-
-
 body {
     color: #FF6F61 !important;
-
+    position: relative;
+    z-index: -2;
 }
 
 h1 h2 h3 {
@@ -106,7 +104,7 @@ margin-left: -75px;
     background-repeat: none;
     background-position: center;
     background-size: cover;
-    z-index: -11;
+    z-index: -2;
 }
 
 .overlay {
@@ -117,7 +115,15 @@ margin-left: -75px;
     top:0;
     bottom: 0;
     opacity: 40%;
-    z-index: -10;
+    z-index: -1;
+}
+
+.learnMore{
+    z-index: 999999 !important;
+}
+
+.learnMore:hover{
+    background-color: black
 }
 
 .display-4 {
@@ -128,6 +134,10 @@ margin-left: -75px;
 
 .categoryTag {
     font-size: 1em;
+}
+
+.displayList{
+    list-style: none;
 }
 
 footer{
@@ -141,7 +151,6 @@ footer{
 .hide{
     display: none
 }
-
 /* 
 .card-img-top {
     width: 100%;

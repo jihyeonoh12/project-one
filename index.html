@@ -26,6 +26,14 @@
     <!-- Google Font-->
     <link href="https://fonts.googleapis.com/css?family=Poppins:400,600,700&display=swap" rel="stylesheet">
 
+    <!-- Whisk SDK -->
+    <script async="true" src="https://cdn.whisk.com/sdk/shopping-list.js" type="text/javascript">
+    </script>
+    <script>
+        var whisk = whisk || {};
+        whisk.queue = whisk.queue || [];
+    </script>
+
     <script src="lib/moment/moment.min.js"></script>
 
 </head>
@@ -71,7 +79,7 @@
             <h1 class="display-4">Taco Tuesday</h1>
             <!-- <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its
                 parent.</p> -->
-            <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+            <button class="btn btn-primary btn-lg learnMore" role="button" enabled>Learn more</button>
 
         </div>
     </div>
@@ -110,7 +118,7 @@
             <ol class="recipeInstructions">
 
             </ol>
-            <button class='btn btn-secondary cartBtn'>Add to Cart</button>
+            <button class='btn btn-secondary cartBtn' id='whisk-basket'>Add to Cart</button>
         </div>
     </div>
     <footer>
@@ -124,8 +132,6 @@
 
 
     <script src='script.js'></script>
-
-
 
 </body>
 
