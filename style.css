@@ -3,11 +3,31 @@ body {
 }
 
 button {
-    color: #FF6F61 !important;
+    background-color: #FF6F61 !important;
+    border: none;
 }
+.btn-secondary{
+    border: none;
+}
+.btn-outline-success {
+    color: white;
+    background-color: #FF6F61 !important;
+    border: none;
+}
+
 a {
     color: #FF6F61 !important;
 }
+
+nav {
+    background-color: white;
+    box-shadow: 0 5px 10px -1px rgba(0,0,1,.1);
+}
+
+.nav-logo {
+    margin: auto;
+}
+
 .dropdown {
     position: relative;
     display: inline-block;
