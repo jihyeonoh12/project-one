@@ -51,9 +51,12 @@ nav {
     height: 75px;
 }
 
+
+
 .nav-logo {
    
   position: fixed;
+  margin-top: -15px;
   left: 50%;
 margin-left: -75px;
    
@@ -62,9 +65,8 @@ margin-left: -75px;
     
 }
 .dropdown {
-    position: fixed;
-    left: 10px;
-    top : 15px;
+    position: relative;
+    
     color: #FF6F61;
 }
 
@@ -139,6 +141,7 @@ footer{
 .hide{
     display: none
 }
+
 /* 
 .card-img-top {
     width: 100%;
@@ -157,3 +160,4 @@ footer{
     
 }
  */
+
