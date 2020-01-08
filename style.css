@@ -48,21 +48,25 @@ nav {
     position: relative;
     background-color: white;
     box-shadow: 0 5px 10px -1px rgba(0,0,1,.1);
+    height: 75px;
 }
+
+
 
 .nav-logo {
    
-  margin-left: 42%;
+  position: fixed;
+  margin-top: -15px;
+  left: 50%;
+margin-left: -75px;
    
 }
 .navbar-toggler {
     
 }
-
 .dropdown {
-    position: fixed;
-    left: 10px;
-    top : 15px;
+    position: relative;
+    
     color: #FF6F61;
 }
 
@@ -95,7 +99,7 @@ nav {
     text-align: center;
     color: white;
     margin-bottom: 0px;
-    background-image: url("images/1.jpg");
+    /* background-image: url("images/1.jpg"); */
     background-repeat: none;
     background-position: center;
     background-size: cover;
