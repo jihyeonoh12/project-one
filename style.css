@@ -94,7 +94,7 @@ margin-left: -75px;
     display: block;
 
 }
-.jumbotron {
+.jumbotron-fluid {
     height: 100vh;
     text-align: center;
     color: white;
@@ -126,6 +126,7 @@ footer{
 .hide{
     display: none
 }
+
 /* 
 .card-img-top {
     width: 100%;
@@ -144,3 +145,4 @@ footer{
     
 }
  */
+

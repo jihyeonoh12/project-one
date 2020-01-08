@@ -6,7 +6,7 @@
 function searchRecipes(searchItem) {
     $('.displayList').empty();
     $('.displayList').removeClass('hide')
-    $('.jumbotron').remove();
+    $('.jumbotron-fluid').remove();
     var foodItem = encodeURI(searchItem);
     var recipesURL = 'https://api.spoonacular.com/recipes/search?query=' + foodItem + '&instructionsRequired=true&apiKey=aefe372afd5741e38ead99f0c5a57515'
     $.ajax({
@@ -45,7 +45,7 @@ function searchRecipes(searchItem) {
 
 function loadRecipe(id) {
     $('.displayList').addClass('hide');
-    $('.recipeInfomation').removeClass('hide')
+    $('.recipeInformation').removeClass('hide')
     var recipeInfoURL = 'https://api.spoonacular.com/recipes/' + id + '/information?apiKey=aefe372afd5741e38ead99f0c5a57515'
 
     $.ajax({
@@ -54,6 +54,14 @@ function loadRecipe(id) {
     }).then(function (recipeResponse) {
         console.log(recipeResponse);
         $('.recipeInstructionsImage').attr('src', recipeResponse.image)
+
+        for (i = 0; i < recipeResponse.extendedIngredients.length; i++) {
+            $('<li>').addClass('ingredient').html(recipeResponse.extendedIngredients[i].name + '(' + recipeResponse.extendedIngredients[i].amount + ' ' + recipeResponse.extendedIngredients[i].unit + ')').appendTo($('.ingredientList'))
+        }
+
+        for (i = 0; i < recipeResponse.analyzedInstructions[0].steps.length; i++) {
+            $('<li>').addClass('recipeInstructionSteps').html(recipeResponse.analyzedInstructions[0].steps[i].step).appendTo($('.recipeInstructions'))
+        }
     })
 }
 
@@ -70,6 +78,7 @@ $('.categoryItem').on('click', function () {
     var categoryItem = $(this).html();
     searchRecipes(categoryItem)
 })
+
 
 // function change(){
 //     $('.jumbotron').css('background-image', 'url(images/2.jpeg)')
@@ -110,5 +119,6 @@ function imageChange(){
     }
 
 }
+
 
 imageChange();
