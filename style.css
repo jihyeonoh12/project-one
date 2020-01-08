@@ -62,7 +62,7 @@ nav {
     height: 100vh;
     text-align: center;
     color: white;
-    margin-top: 50px;
+    margin-bottom: 0px;
     background-image: url("images/1.jpg");
     background-repeat: none;
     background-position: center;
@@ -71,10 +71,10 @@ nav {
 
 footer{
     text-align: center;
-    background-color: #134d80;
+    background-color: white;
 }
 
-}.hide{
+.hide{
     display: none
 }
 /* 
