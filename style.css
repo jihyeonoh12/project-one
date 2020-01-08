@@ -94,7 +94,10 @@ margin-left: -75px;
     display: block;
 
 }
+
+
 .jumbotron-fluid {
+    position: relative;
     height: 100vh;
     text-align: center;
     color: white;
@@ -103,6 +106,18 @@ margin-left: -75px;
     background-repeat: none;
     background-position: center;
     background-size: cover;
+    z-index: -11;
+}
+
+.overlay {
+    height: 100%;
+    width: 100%;
+    background-color: black;
+    position: absolute;
+    top:0;
+    bottom: 0;
+    opacity: 40%;
+    z-index: -10;
 }
 
 .display-4 {
