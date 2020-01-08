@@ -1,3 +1,7 @@
+
+
+
+
 // function to search for and display 
 function searchRecipes(searchItem) {
     $('.displayList').empty();
@@ -72,4 +76,39 @@ $('.categoryItem').on('click', function () {
 // }
 
 // change()
+var dayImage = {
+    Monday:'images/meatless_monday2.jpg',
+    Tuesday: 'images/taco_tuesday.jpg',
+    Wednesday: 'images/wing_wednesday.jpg',
+    Thursday: 'images/cocktail_thursday3.jpg',
+    Friday: 'images/fried_food_friday.jpg',
+    Saturday: 'images/salad_saturday.jpg',
+    Sunday: 'images/simple_sunday2.jpg'
+}
 
+function imageChange(){
+    if((moment().format('dddd'))==="Monday"){
+        $(".jumbotron").css("background-image", "url(" + dayImage.Monday)
+    }
+    else if((moment().format('dddd'))==="Tuesday"){
+        $(".jumbotron").css("background-image", "url(" + dayImage.Tuesday)
+    }
+    else if((moment().format('dddd'))==="Wednesday"){
+        $(".jumbotron").css("background-image", "url(" + dayImage.Wednesday)
+    }
+    else if((moment().format('dddd'))==="Thursday"){
+        $(".jumbotron").css("background-image", "url(" + dayImage.Thursday)
+    }
+    else if((moment().format('dddd'))==="Friday"){
+        $(".jumbotron").css("background-image", "url(" + dayImage.Friday)
+    }
+    else if((moment().format('dddd'))==="Saturday"){
+        $(".jumbotron").css("background-image", "url(" + dayImage.Saturday)
+    }
+    else if((moment().format('dddd'))==="Sunday"){
+        $(".jumbotron").css("background-image", "url(" + dayImage.Sunday)
+    }
+
+}
+
+imageChange();
