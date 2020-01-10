@@ -154,8 +154,8 @@ var friday = {
 }
 
 var saturday = {
-    background: 'images/salad_saturday.jpg',
-    theme: 'Salad Saturday'
+    background: 'images/seafood_saturday.jpg',
+    theme: 'Seafood Saturday'
 }
 
 var sunday = {
