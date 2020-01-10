@@ -138,6 +138,8 @@ margin-left: -75px;
 
 .displayList{
     list-style: none;
+    margin: 20px;
+    padding: 0px
 }
 
 footer{
@@ -150,6 +152,15 @@ footer{
 
 .hide{
     display: none
+}
+
+.displayList li{
+    max-width: 700px;
+    margin: auto
+}
+
+.displayList .card{
+    border-radius: 10px;
 }
 /* 
 .card-img-top {

@@ -22,11 +22,11 @@ function searchRecipes(searchItem) {
             var newItem = $('<li>');
             newItem.addClass('resultItem')
 
-            var newCard = $('<div>').addClass('card mb-3');
-            var newRow = $('<div>').addClass('row no-gutters');
-            var imgCol = $('<div>').addClass('col-sm-4');
+            var newCard = $('<div>').addClass('card mb-3 m-2 mx-auto');
+            var newRow = $('<div>').addClass('row cardRow');
+            var imgCol = $('<div>').addClass('col-md-8');
             var newImg = $('<img>').addClass('card-img');
-            var contentCol = $('<div>').addClass('col-sm-8');
+            var contentCol = $('<div>').addClass('col-md-4');
             var cardBody = $('<div>').addClass('card-body');
             var cardTitle = $('<h5>').addClass('card-title');
             var cardText = $('<p>').addClass('card-text');
@@ -36,13 +36,13 @@ function searchRecipes(searchItem) {
 
             newImg.attr('src', 'https://spoonacular.com/recipeImages/' + resultArray[i].id + '-312x150.jpg');
             cardTitle.html(resultArray[i].title);
-            cardText.html('Ready in: ' + resultArray[i].readyInMinutes + '<br><br> Serves: ' + resultArray[i].servings)
+            cardText.html('Ready in: ' + resultArray[i].readyInMinutes + '<br> Serves: ' + resultArray[i].servings)
 
-            newCard.append(newRow, newItemBtn);
+            newCard.append(newRow);
             newRow.append(imgCol, contentCol);
             imgCol.append(newImg);
             contentCol.append(cardBody);
-            cardBody.append(cardTitle, cardText);
+            cardBody.append(cardTitle, cardText, newItemBtn);
             newItem.append(newCard)
             
             // var newItemTitle = $('<h2>');
