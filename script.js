@@ -128,33 +128,75 @@ var dayImage = {
     Sunday: 'images/simple_sunday2.jpg'
 }
 
+var monday = {
+    background: 'images/meatless_monday2.jpg',
+    theme: 'Meatless Monday'
+}
+
+var tuesday = {
+    background: 'images/taco_tuesday.jpg',
+    theme: 'Taco Tuesday'
+}
+
+var wednesday = {
+    background: 'images/wing_wednesday.jpg',
+    theme: 'Wing Wednesday'
+}
+
+var thursday = {
+    background: 'images/cocktail_thursday3.jpg',
+    theme: 'Thirsty Thursday'
+}
+
+var friday = {
+    background: 'images/fried_food_friday.jpg',
+    theme: 'Fried Friday'
+}
+
+var saturday = {
+    background: 'images/salad_saturday.jpg',
+    theme: 'Salad Saturday'
+}
+
+var sunday = {
+    background: 'images/simple_sunday2.jpg',
+    theme: 'Simple Sunday'
+}
+
 function imageChange() {
     if ((moment().format('dddd')) === "Monday") {
-        $(".jumbotron-fluid").css("background-image", "url(" + dayImage.Monday);
+        $(".jumbotron-fluid").css("background-image", "url(" + monday.background);
+        $('.dayTheme').html(monday.theme);
         $('.learnMore').attr('data-value', 'vegetarian')
     }
     else if ((moment().format('dddd')) === "Tuesday") {
-        $(".jumbotron-fluid").css("background-image", "url(" + dayImage.Tuesday);
+        $(".jumbotron-fluid").css("background-image", "url(" + tuesday.background);
+        $('.dayTheme').html(tuesday.theme);
         $('.learnMore').attr('data-value', 'tacos')
     }
     else if ((moment().format('dddd')) === "Wednesday") {
-        $(".jumbotron-fluid").css("background-image", "url(" + dayImage.Wednesday);
+        $(".jumbotron-fluid").css("background-image", "url(" + wednesday.background);
+        $('.dayTheme').html(wednesday.theme);
         $('.learnMore').attr('data-value', 'wings')
     }
     else if ((moment().format('dddd')) === "Thursday") {
-        $(".jumbotron-fluid").css("background-image", "url(" + dayImage.Thursday);
+        $(".jumbotron-fluid").css("background-image", "url(" + thursday.background);
+        $('.dayTheme').html(thursday.theme);
         $('.learnMore').attr('data-value', 'cocktails')
     }
     else if ((moment().format('dddd')) === "Friday") {
-        $(".jumbotron.fluid").css("background-image", "url(" + dayImage.Friday);
+        $(".jumbotron.fluid").css("background-image", "url(" + friday.background);
+        $('.dayTheme').html(friday.theme);
         $('.learnMore').attr('data-value', 'fried')
     }
     else if ((moment().format('dddd')) === "Saturday") {
-        $(".jumbotron.fluid").css("background-image", "url(" + dayImage.Saturday);
+        $(".jumbotron.fluid").css("background-image", "url(" + saturday.background);
+        $('.dayTheme').html(saturday.theme);
         $('.learnMore').attr('data-value', 'salad')
     }
     else if ((moment().format('dddd')) === "Sunday") {
-        $(".jumbotron.fluid").css("background-image", "url(" + dayImage.Sunday);
+        $(".jumbotron.fluid").css("background-image", "url(" + sunday.background);
+        $('.dayTheme').html(sunday.theme);
         $('.learnMore').attr('data-value', 'simple')
     }
 }
