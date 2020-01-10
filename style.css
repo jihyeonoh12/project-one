@@ -59,12 +59,7 @@ nav {
 margin-left: -75px;
    
 }
-.navbar-collapse {
-    background: white;
-    padding: 10px;
-    border-radius: 5px;
-    margin-top: 15px;
-}
+
 .dropdown {
     position: relative;
     
@@ -95,22 +90,34 @@ margin-left: -75px;
     display: block;
 
 }
+
+.navbar-collapse {
+    background: white;
+    
+    border-radius: 5px;
+    
+}
+
 .inputField {
-    height: 50px;
+    
     border: 1px solid #FF6F61;
     border-radius: 5px;
 }
 
-.form-inline {
-    max-width: 320px;
-}
+  .form-inline {
+    /* max-width: 270px; */
+    padding-left: 20px;
+    padding-right: 20px;
 
-.form-control {
+} 
+
+ /* .form-control {
     width: 70%;
-}
-.searchButton {
-    width: 30%;
-}
+} */
+#dropdownMenuButton {
+    margin-left: 20px;
+    margin-right: 20px;
+}   
 
 
 .jumbotron-fluid {
