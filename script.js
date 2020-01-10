@@ -44,20 +44,7 @@ function searchRecipes(searchItem) {
             contentCol.append(cardBody);
             cardBody.append(cardTitle, cardText, newItemBtn);
             newItem.append(newCard)
-            
-            // var newItemTitle = $('<h2>');
-            // newItemTitle.addClass('resultItemTitle');
-            // newItemTitle.attr('data-id', resultArray[i].id)
-            // newItemTitle.text(resultArray[i].title)
-            // var newItemImage = $('<img>');
-            // newItemImage.addClass('resultItemImg');
-            // newItemImage.attr('src', 'https://spoonacular.com/recipeImages/' + resultArray[i].id + '-312x150.jpg')
-            // var newItemDescription = $('<p>')
-            // newItemDescription.addClass('resultItemDescription')
-            // newItemDescription.html('Ready in: ' + resultArray[i].readyInMinutes + '<br><br> Serves: ' + resultArray[i].servings);
-            // var newItemBtn = $('<button>');
-            // newItemBtn.addClass('btn btn-primary recipeBtn').html('Get Recipe').attr('data-id', resultArray[i].id)
-            // newItem.append(newItemTitle, newItemImage, newItemDescription, newItemBtn);
+
             newItem.appendTo($('.displayList'))
         }
         $('.recipeBtn').on('click', function () {
@@ -187,17 +174,17 @@ function imageChange() {
         $('.learnMore').attr('data-value', 'cocktails')
     }
     else if ((moment().format('dddd')) === "Friday") {
-        $(".jumbotron.fluid").css("background-image", "url(" + friday.background);
+        $(".jumbotron-fluid").css("background-image", "url(" + friday.background);
         $('.dayTheme').html(friday.theme);
         $('.learnMore').attr('data-value', 'fried')
     }
     else if ((moment().format('dddd')) === "Saturday") {
-        $(".jumbotron.fluid").css("background-image", "url(" + saturday.background);
+        $(".jumbotron-fluid").css("background-image", "url(" + saturday.background);
         $('.dayTheme').html(saturday.theme);
         $('.learnMore').attr('data-value', 'seafood')
     }
     else if ((moment().format('dddd')) === "Sunday") {
-        $(".jumbotron.fluid").css("background-image", "url(" + sunday.background);
+        $(".jumbotron-fluid").css("background-image", "url(" + sunday.background);
         $('.dayTheme').html(sunday.theme);
         $('.learnMore').attr('data-value', 'simple')
     }
