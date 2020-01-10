@@ -4,7 +4,7 @@ body {
     z-index: -2;
 }
 
-h1 h2 h3 {
+h1 h2 h3 h5 {
     font-family: 'Poppins', sans-serif;
     font-weight: 400;
 }
@@ -13,6 +13,8 @@ h4 p {
     font-family: Arial, Helvetica, sans-serif;
     font-weight: 300;
 }
+
+
 
 button {
     background-color: #FF6F61 !important;
@@ -264,4 +266,17 @@ footer {
 
 .instructionJumbo{
     margin-bottom: 0px !important
+}
+
+/*-- search result card --*/
+
+.card-title {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 1.2em;
+    color: black;
+}
+
+.col-md-4 {
+    padding: 0;
 }
