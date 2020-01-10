@@ -280,3 +280,17 @@ footer {
 .col-md-4 {
     padding: 0;
 }
+
+.instructionTitle {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 1.3em;
+    color: black;
+}
+
+.recipeInstructionSteps {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 300;
+    color: rgb(70, 70, 70);
+    font-size: 1.2em;
+}
