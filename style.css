@@ -47,7 +47,7 @@ nav {
 
 .nav-logo {
 
-    position: fixed;
+    position: absolute;
     margin-top: -15px;
     left: 50%;
     margin-left: -75px;
