@@ -146,6 +146,7 @@ nav {
     bottom: 0;
     opacity: 40%;
     z-index: -1;
+    -webkit-opacity: 0.4
 }
 
 .learnMore {
