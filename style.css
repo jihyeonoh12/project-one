@@ -59,8 +59,11 @@ nav {
 margin-left: -75px;
    
 }
-.navbar-toggler {
-    
+.navbar-collapse {
+    background: white;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 15px;
 }
 .dropdown {
     position: relative;
@@ -91,6 +94,22 @@ margin-left: -75px;
 .dropdown:hover .dropdown-content {
     display: block;
 
+}
+.inputField {
+    height: 50px;
+    border: 1px solid #FF6F61;
+    border-radius: 5px;
+}
+
+.form-inline {
+    max-width: 320px;
+}
+
+.form-control {
+    width: 70%;
+}
+.searchButton {
+    width: 30%;
 }
 
 
