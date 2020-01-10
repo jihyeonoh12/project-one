@@ -26,6 +26,9 @@
     <!-- Google Font-->
     <link href="https://fonts.googleapis.com/css?family=Poppins:400,600,700&display=swap" rel="stylesheet">
 
+    <!--Font Awesome-->
+    <link rel="stylesheet" href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css>
+
     <!-- Whisk SDK -->
     <script async="true" src="https://cdn.whisk.com/sdk/shopping-list.js" type="text/javascript">
     </script>
@@ -90,21 +93,41 @@
 
 
     <ul class='hide displayList'>
-        
+
     </ul>
 
     <div class="recipeInformation hide">
-        <div class="jumbotron">
-            <img src="" alt="" class="recipeInstructionsImage">
-            <ul class='ingredientList'>
+        <div class="jumbotron ingredientsJumbo">
+            <!-- <h3 class='recipeName'></h3> -->
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 col-sm-6">
+                        <img src="" alt="" class="recipeInstructionsImage">
+                    </div>
+                    <div class="col-12 col-sm-6">
+                        <div class="card ingredientCard mx-auto " style="width: 18rem;">
+                            <div class="card-body ingredientCardBody justify-content-center">
+                                <h3 class="card-title recipeName">Card title</h3>
+                                <h6 class="card-subtitle mb-2 text-muted">Ingredients</h6>
 
-            </ul>
+                                <ul class='ingredientList'>
+
+                                </ul>
+                                <button class='btn btn-secondary cartBtn mx-auto' id='whisk-basket'>Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- <ul class='ingredientList'>
+
+            </ul> -->
         </div>
         <div class="jumbotron">
             <ol class="recipeInstructions">
 
             </ol>
-            <button class='btn btn-secondary cartBtn' id='whisk-basket'>Add to Cart</button>
+
         </div>
     </div>
     <footer>

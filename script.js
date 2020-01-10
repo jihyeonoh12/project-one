@@ -36,7 +36,7 @@ function searchRecipes(searchItem) {
 
             newImg.attr('src', 'https://spoonacular.com/recipeImages/' + resultArray[i].id + '-312x150.jpg');
             cardTitle.html(resultArray[i].title);
-            cardText.html('Ready in: ' + resultArray[i].readyInMinutes + '<br> Serves: ' + resultArray[i].servings)
+            cardText.html('<i class="far fa-clock"></i> ' + resultArray[i].readyInMinutes + '<br> <i class="far fa-user"></i> ' + resultArray[i].servings + '<br>')
 
             newCard.append(newRow);
             newRow.append(imgCol, contentCol);
@@ -72,7 +72,8 @@ function loadRecipe(id) {
     $('.displayList').addClass('hide');
     $('.recipeInformation').removeClass('hide');
     $('.ingredientList').empty();
-    $('.recipeInstructions').empty()
+    $('.recipeInstructions').empty();
+    $('.recipeName').empty();
     var recipeInfoURL = 'https://api.spoonacular.com/recipes/' + id + '/information?apiKey=aefe372afd5741e38ead99f0c5a57515'
 
     $.ajax({
@@ -81,6 +82,7 @@ function loadRecipe(id) {
     }).then(function (recipeResponse) {
         console.log(recipeResponse);
         $('.recipeInstructionsImage').attr('src', recipeResponse.image)
+        $('.recipeName').html(recipeResponse.title)
 
         for (i = 0; i < recipeResponse.extendedIngredients.length; i++) {
             $('<li>').addClass('ingredient').html(recipeResponse.extendedIngredients[i].name + '(' + recipeResponse.extendedIngredients[i].amount + ' ' + recipeResponse.extendedIngredients[i].unit + ')').appendTo($('.ingredientList'))
