@@ -14,9 +14,7 @@ h4 p {
     font-weight: 300;
 }
 
-
-
-button  {
+button {
     background-color: #FF6F61 !important;
     border: none;
 }
@@ -25,46 +23,39 @@ button  {
     background-color: #FF6F61 !important;
     border: none;
     color: white;
-
     font-family: 'Poppins', sans-serif;
     font-weight: 600;
     font-size: 1em;
 }
 
-.btn-secondary{
+.btn-secondary {
     border: none;
 }
+
 .btn-outline-success {
     color: white;
     background-color: #FF6F61 !important;
     border: none;
 }
 
-
-
 nav {
     position: relative;
     background-color: white;
-    box-shadow: 0 5px 10px -1px rgba(0,0,1,.1);
+    box-shadow: 0 5px 10px -1px rgba(0, 0, 1, .1);
     height: 75px;
 }
 
-
-
 .nav-logo {
-   
-  position: fixed;
-  margin-top: -15px;
-  left: 50%;
-margin-left: -75px;
-   
+    position: fixed;
+    margin-top: -15px;
+    left: 50%;
+    margin-left: -75px;
 }
-.navbar-toggler {
-    
-}
+
+.navbar-toggler {}
+
 .dropdown {
     position: relative;
-    
     color: #FF6F61;
 }
 
@@ -90,9 +81,7 @@ margin-left: -75px;
 
 .dropdown:hover .dropdown-content {
     display: block;
-
 }
-
 
 .jumbotron-fluid {
     position: relative;
@@ -112,17 +101,17 @@ margin-left: -75px;
     width: 100%;
     background-color: black;
     position: absolute;
-    top:0;
+    top: 0;
     bottom: 0;
     opacity: 40%;
     z-index: -1;
 }
 
-.learnMore{
+.learnMore {
     z-index: 999999 !important;
 }
 
-.learnMore:hover{
+.learnMore:hover {
     background-color: black
 }
 
@@ -136,11 +125,11 @@ margin-left: -75px;
     font-size: 1em;
 }
 
-.displayList{
+.displayList {
     list-style: none;
 }
 
-footer{
+footer {
     text-align: center;
     background-color: white;
     color: rgb(109, 109, 109);
@@ -148,9 +137,10 @@ footer{
     padding-top: 10px;
 }
 
-.hide{
+.hide {
     display: none
 }
+
 /* 
 .card-img-top {
     width: 100%;
@@ -170,3 +160,14 @@ footer{
 }
  */
 
+.recipeInstructionsImage {
+    width: auto;
+    height: auto;
+}
+
+.ingredientList {
+    
+    width: auto;
+    height: auto;
+    float: right;
+}
