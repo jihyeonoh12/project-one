@@ -196,6 +196,16 @@ footer {
     border-radius: 10px;
 }
 
+.ingredientsJumbo{
+    padding: 20px 0 !important;
+    background-color: white !important;
+}
+
+.recipeInstructionsImage {
+    height: 100%;
+    width: 50%
+}
+
 /* 
 .card-img-top {
     width: 100%;
@@ -220,9 +230,33 @@ footer {
     height: auto;
 }
 
+.ingredientCard{
+    border: none !important;
+    /* padding: none !important; */
+    /* position: relative */
+}
+
 .ingredientList {
-    
+    /* position: absolute;
+    left: 0; */
+    padding: 0px !important;
+    margin: 0px !important;
     width: auto;
     height: auto;
     float: right;
+    margin-bottom: 10px
+}
+
+#whisk-basket{
+    margin-top: 10px !important;
+    margin-left: auto !important;
+    margin-right: auto !important
+}
+.ingredientCardBody{
+    /* padding: 0px !important */
+    padding-top: 0 !important;
+}
+
+.ingredientCardBody h3, h6{
+    text-align: center !important;
 }
