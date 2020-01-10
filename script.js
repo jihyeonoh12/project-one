@@ -194,7 +194,7 @@ function imageChange() {
     else if ((moment().format('dddd')) === "Saturday") {
         $(".jumbotron.fluid").css("background-image", "url(" + saturday.background);
         $('.dayTheme').html(saturday.theme);
-        $('.learnMore').attr('data-value', 'salad')
+        $('.learnMore').attr('data-value', 'seafood')
     }
     else if ((moment().format('dddd')) === "Sunday") {
         $(".jumbotron.fluid").css("background-image", "url(" + sunday.background);

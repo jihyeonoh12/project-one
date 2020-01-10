@@ -53,14 +53,14 @@ nav {
     margin-left: -75px;
 }
 
-.navbar-toggler {
+/* .navbar-toggler {
 
   position: fixed;
   margin-top: -15px;
   left: 50%;
  margin-left: -75px;
    
-}
+} */
 
 
 .dropdown {
@@ -195,13 +195,13 @@ footer {
 }
 
 .ingredientsJumbo{
-    padding: 20px 0 !important;
+    padding: 64px 32px !important;
     background-color: white !important;
 }
 
 .recipeInstructionsImage {
-    height: 100%;
-    width: 50%
+   max-width: 100%;
+   height: auto;
 }
 
 /* 
@@ -246,9 +246,11 @@ footer {
 }
 
 #whisk-basket{
-    margin-top: 10px !important;
+    margin-top: 25px !important;
     margin-left: auto !important;
-    margin-right: auto !important
+    margin-right: auto !important;
+    position: relative;
+    left: 25%
 }
 .ingredientCardBody{
     /* padding: 0px !important */
@@ -257,4 +259,8 @@ footer {
 
 .ingredientCardBody h3, h6{
     text-align: center !important;
+}
+
+.instructionJumbo{
+    margin-bottom: 0px !important
 }
